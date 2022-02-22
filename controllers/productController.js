@@ -2,7 +2,7 @@ const Product = require('../models/Product');
 const { validationResult } = require('express-validator');
 
 exports.createProduct = async (req, res) => {
-  const errors = validationResult(req);
+  const errors = validationResult(req.body);
   if (!errors.isEmpty()) {
     return res.status(400).json({ errors: errors.array() });
   }

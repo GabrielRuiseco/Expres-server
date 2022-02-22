@@ -7,7 +7,7 @@ const router = express.Router();
 
 router.post('/', [
   check('Name', 'El nombre es obligatorio').not().isEmpty(),
-  check('Price', 'El nombre es obligatorio').not().isEmpty()
+  check('Price', 'El precio es obligatorio').not().isEmpty()
 ],Product.createProduct);
 
 
